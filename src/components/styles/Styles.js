@@ -28,7 +28,7 @@ font-family: 'Chango', cursive;
 
 export const HomeH1 = styled.div`
     font-size: 3vh;
-    height: 20vh;
+    height: ${props => props.h || "20vh"};;
     text-align: center;
     display: flex;
     justify-content: center;
@@ -42,6 +42,12 @@ export const ButtonDiv = styled.div`
     height: 40vh;
     display: flex;
     justify-content: center;
+    align-items: center;
+`;
+export const YearDiv = styled.div`
+    height: 10vh;
+    display: flex;
+    justify-content: left;
     align-items: center;
 `;
 
