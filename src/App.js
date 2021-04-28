@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+import React from 'react'
+import { Link } from "react-router-dom";
+import * as StyledC from "./components/styles/Styles"
+import { Button } from 'react-bootstrap' // import styled-component
+
+const App = () => {
+
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <StyledC.MainDiv >
+      <div className="row mx-0">
+        <div className="col-8 offset-2">
+          <StyledC.H1JobsDiv>
+            <StyledC.HomeH1>Tracker!</StyledC.HomeH1>
+          </StyledC.H1JobsDiv>
+          <StyledC.ButtonDiv>
+            <Link to="/ep2" className=' mx-5'><Button variant="warning" size="lg">Add entry</Button></Link>
+            <Link to="/hunt" className=' mx-5'><Button variant="warning" size="lg">Add entry</Button></Link>
+          </StyledC.ButtonDiv>
+        </div>
+      </div>
+    </StyledC.MainDiv>
+  )
 }
 
-export default App;
+export default App
