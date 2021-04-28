@@ -27,7 +27,7 @@ const loadFromLocalStorage = () => {
   const serializeState = localStorage.getItem('epreturns');
   if (serializeState === null) {
     return {
-
+      2021: { 0: {}, 1: {}, 2: {}, 3: {}, 4: {}, 5: {}, 6: {}, 7: {}, 8: {}, 9: {}, 10: {}, 11: {} }
     }
   }
   else {
