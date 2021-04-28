@@ -55,7 +55,7 @@ export const YearDiv = styled.div`
 
 
 export const H1JobsDiv = styled.div`
-
+font-weight: bold;
  
 `;
 
