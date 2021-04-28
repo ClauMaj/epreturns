@@ -21,11 +21,16 @@ const Ep2 = () => {
             <div className="row mx-0">
                 <div className="col-10 offset-1">
                     <StyledC.YearDiv>
-                        <Button variant="warning" size="lg">2021</Button>
+                        <Button style={{ backgroundColor: "#f26419", color: "black", border: "none" }} size="lg">2021</Button>
                     </StyledC.YearDiv>
                 </div>
             </div>
+            <div className="row mx-0">
+                <div className="col-10 offset-1 monTotal">
 
+                    <Stats />
+                </div>
+            </div>
             <div className="row mx-0">
                 <div className="col-10 offset-1">
 
@@ -33,12 +38,7 @@ const Ep2 = () => {
                 </div>
             </div>
 
-            <div className="row mx-0">
-                <div className="col-10 offset-1">
 
-                    <Stats />
-                </div>
-            </div>
 
 
 

@@ -26,7 +26,9 @@ const saveToLocalStorage = (reduxGlobalState) => {
 const loadFromLocalStorage = () => {
   const serializeState = localStorage.getItem('epreturns');
   if (serializeState === null) {
-    return null
+    return {
+
+    }
   }
   else {
     return JSON.parse(serializeState) // JS object

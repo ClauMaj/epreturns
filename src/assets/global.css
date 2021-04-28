@@ -38,3 +38,9 @@
   color: black;
   font-weight: bold;
 }
+
+#appDate {
+  height: 3.5vh;
+  overflow: hidden;
+  background-color: #495057;
+}

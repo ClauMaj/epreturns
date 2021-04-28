@@ -7,7 +7,7 @@ const BaseLayout = (props) => {
         <>
             <Header />
             {props.children}
-
+            <Footer />
         </>
     )
 }

@@ -60,6 +60,7 @@ font-weight: bold;
 `;
 
 export const MainDiv = styled.div`
+min-height: 93vh;
 background-color: #023047;
 
 `;

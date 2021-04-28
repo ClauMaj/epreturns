@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import * as StyledC from "./styles/Styles"
 import { Button } from 'react-bootstrap' // import styled-component
 import Days from './Days'
+import AddEntryForm from './AddEntryForm'
 import '../assets/global.css'
 
 const TabSection = () => {
@@ -24,6 +25,7 @@ const TabSection = () => {
     let monthTabs = allMonths.map((m, index) => {
         return (
             <Tab eventKey={index} title={m}>
+                <AddEntryForm />
                 <Days month={index + 1} />
             </Tab>
         )
