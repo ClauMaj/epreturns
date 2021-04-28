@@ -1,6 +1,7 @@
 import React from "react";    // import react
 import ReactDOM from "react-dom";  // import react-dom
 import App from "./App";  // component
+import Ep2 from "./components/Ep2";  // component
 import BaseLayout from './components/layout/BaseLayout'; // import the BaseLayout component(covers all pages)
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom' // routers and switches for the render
 import reducer from "./reducers/reducer";  // import the reducer
@@ -53,6 +54,7 @@ ReactDOM.render(
         <BaseLayout>
           <Switch>
             <Route exact path="/" component={App} />
+            <Route path="/ep2" component={Ep2} />
           </Switch>
         </BaseLayout>
       </Router>

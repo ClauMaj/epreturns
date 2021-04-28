@@ -28,7 +28,7 @@ font-family: 'Chango', cursive;
 
 export const HomeH1 = styled.div`
     font-size: 3vh;
-    height: 30vh;
+    height: 20vh;
     text-align: center;
     display: flex;
     justify-content: center;
@@ -39,7 +39,7 @@ export const HomeH1 = styled.div`
 
 
 export const ButtonDiv = styled.div`
-    height: 20vh;
+    height: 40vh;
     display: flex;
     justify-content: center;
     align-items: center;

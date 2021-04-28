@@ -9,12 +9,13 @@ const Header = (props) => {
     return (
         <>
             <Navbar collapseOnSelect className="nav-color" expand="lg">
-                <Navbar.Brand as={Link} to="/"> <span style={{ color: "#f26419" }}>EPTracker</span> </Navbar.Brand>
+                <Navbar.Brand as={Link} to="/"> <span className="nav-links-style">EPTracker</span> </Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="ml-auto mr-3">
-                        <Nav.Link as={Link} to="/"><span style={{ color: "#f26419" }}>EP2</span></Nav.Link>
-                        <Nav.Link as={Link} to="/hooks"><span style={{ color: "#f26419" }}>Hunt</span></Nav.Link>
+                        <Nav.Link as={Link} to="/"><span className="nav-links-style">EP2</span></Nav.Link>
+                        <Nav.Link as={Link} to="/hunt"><span className="nav-links-style">Hunting Returns</span></Nav.Link>
+                        <Nav.Link as={Link} to="/mine"><span className="nav-links-style">Mining Returns</span></Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>

@@ -1,3 +1,15 @@
 .nav-color {
   background-color: #31393c;
 }
+
+.nav-links-style {
+  color: #f26419;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.nav-links-style:hover {
+  display: block;
+  transform: scale(1.1);
+  text-shadow: 1px 1px black;
+}
