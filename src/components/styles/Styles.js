@@ -61,22 +61,18 @@ font-weight: bold;
 
 export const MainDiv = styled.div`
 background-color: #023047;
- height: 93vh;
+
 `;
 
-export const JobLi = styled.li`
-cursor: pointer;
+export const DayLi = styled.li`
+list-style-type: none;
 width: 100%;
-background-color: #D3D3D3;
+background-color: #576777;
 font-size: 1.2rem;
 /* list-style-type: none; */
 margin-bottom:4px;
 border-radius: 5px;
 font-weight: 400;
-&:hover {
-  /* list-style-type: none; */
-  background-color: rgb(230, 230, 230);
-}
 
 `;
 

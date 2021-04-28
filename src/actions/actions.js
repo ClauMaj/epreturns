@@ -1,8 +1,8 @@
 
 // an action creator, return an object with TYPE and data
-export const increment = (n) => {
+export const setMonth = (n) => {
     return {
-        type: "INCREMENT",
+        type: "SETMONTH",
         data: n
     }
 }

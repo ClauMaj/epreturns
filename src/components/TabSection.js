@@ -3,10 +3,13 @@ import { Tabs, Tab } from 'react-bootstrap'
 import { Link } from "react-router-dom";
 import * as StyledC from "./styles/Styles"
 import { Button } from 'react-bootstrap' // import styled-component
+import Days from './Days'
 import '../assets/global.css'
 
 const TabSection = () => {
     const [key, setKey] = useState(0);
+
+
     const allMonths = ["January", "February", "March", "April", "May", "June", "July",
         "August", "September", "October", "November", "December"];
 
@@ -16,11 +19,12 @@ const TabSection = () => {
         setKey(parseInt(currMonth))
         console.log(currMonth)
     }, [])
-    console.log(key)
+
+
     let monthTabs = allMonths.map((m, index) => {
         return (
             <Tab eventKey={index} title={m}>
-
+                <Days month={index + 1} />
             </Tab>
         )
     }

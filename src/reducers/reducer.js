@@ -4,10 +4,10 @@
 // reducer must be passed into Store in the index file
 const reducer = (state, action) => {
     switch (action.type) {
-        case "INCREMENT":
+        case "SETMONTH":
             return {
                 ...state,
-                counter: state.counter + action.data
+                selectedMonth: action.data
             }
         default:
             return state;
