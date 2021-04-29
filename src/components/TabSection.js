@@ -11,6 +11,10 @@ import { setMonth } from '../actions/actions';
 
 const TabSection = () => {
     const [key, setKey] = useState(0);
+    const selectedMonth = useSelector(state => state.selectedMonth)
+
+    let d = new Date();
+    let currMonth = d.getMonth();
 
     // receive dispatch functions
     const dispatch = useDispatch()
@@ -19,8 +23,6 @@ const TabSection = () => {
         "August", "September", "October", "November", "December"];
 
     useEffect(() => {
-        let d = new Date();
-        let currMonth = d.getMonth();
         setKey(parseInt(currMonth))
         dispatch(setMonth(parseInt(currMonth)))
         console.log(currMonth)
@@ -31,7 +33,7 @@ const TabSection = () => {
         return (
             <Tab key={index} eventKey={index} title={m}>
                 <AddEntryForm />
-                <Days month={index + 1} />
+                {(index === selectedMonth) && <Days />}
             </Tab>
         )
     }

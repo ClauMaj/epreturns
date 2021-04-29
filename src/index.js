@@ -11,6 +11,13 @@ import "bootstrap/dist/css/bootstrap.min.css"; // import bootstrap link
 import "./assets/global.css";  // import custom css
 
 
+// font-awesome
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faTrash, faEdit } from '@fortawesome/free-solid-svg-icons'
+
+library.add(faTrash, faEdit)
+
+
 // save state to local storage (convert to string and save)
 const saveToLocalStorage = (reduxGlobalState) => {
   try {
@@ -27,10 +34,10 @@ const loadFromLocalStorage = () => {
   const serializeState = localStorage.getItem('epreturns');
   if (serializeState === null) {
     return {
-      2021: {
-        ep2: { 0: [], 1: [], 2: [], 3: [], 4: [], 5: [], 6: [], 7: [], 8: [], 9: [], 10: [], 11: [] },
-        hunt: { 0: [], 1: [], 2: [], 3: [], 4: [], 5: [], 6: [], 7: [], 8: [], 9: [], 10: [], 11: [] },
-        mine: { 0: [], 1: [], 2: [], 3: [], 4: [], 5: [], 6: [], 7: [], 8: [], 9: [], 10: [], 11: [] }
+      year2021: {
+        ep2: [],
+        hunt: [],
+        mine: [],
       }
     }
   }

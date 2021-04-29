@@ -3,7 +3,8 @@
 }
 
 .nav-links-style {
-  color: #f26419;
+  /* color: #f26419; */
+  color: black;
   font-weight: bold;
   font-size: 1rem;
 }
@@ -21,13 +22,13 @@
 
 .nav-tabs .nav-item.show .nav-link,
 .nav-tabs .nav-link.active {
-  color: #495057;
-  background-color: #f26419 !important;
-  border-color: #f26419 !important;
+  color: black !important;
+  background-color: #b14b14 !important;
+  border-color: #b14b14 !important;
 }
 .nav-tabs .nav-item.show .nav-link,
 .nav-tabs .nav-link:hover {
-  color: #495057;
+  color: black !important;
   border-color: #f26419 !important;
 }
 .nav-tabs {
@@ -35,12 +36,22 @@
 }
 
 .monTotal {
-  color: black;
   font-weight: bold;
+  color: #718599;
 }
 
 #appDate {
   height: 3.5vh;
   overflow: hidden;
   background-color: #495057;
+}
+
+.deleteEdit {
+  background-color: #576777 !important;
+  border-color: #576777 !important;
+}
+
+.deleteEdit:focus {
+  background-color: #d3d3d3;
+  border: none;
 }

@@ -6,3 +6,17 @@ export const setMonth = (n) => {
         data: n
     }
 }
+
+export const addEp2Entry = (n) => {
+    return {
+        type: "ADDEPENTRY",
+        data: n
+    }
+}
+
+export const deleteEntry = (n) => {
+    return {
+        type: "DELETEENTRY",
+        data: n
+    }
+}

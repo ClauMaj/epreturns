@@ -69,12 +69,13 @@ export const DayLi = styled.li`
 list-style-type: none;
 width: 100%;
 background-color: #576777;
-font-size: 1.2rem;
-/* list-style-type: none; */
+font-size: 1rem;
 margin-bottom:4px;
 border-radius: 5px;
 font-weight: 400;
-
+&:hover {
+  background-color: #718599;
+}
 `;
 
 export const TitleLi = styled.li`
