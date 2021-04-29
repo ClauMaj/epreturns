@@ -1,5 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux';
+import '../assets/global.css';
 
 const Stats = () => {
     const allSessions = useSelector(state => state.year2021.ep2)
@@ -16,7 +17,7 @@ const Stats = () => {
     console.log(totalTtIn)
     return (
         <>
-            <p> Global stats <span style={{ color: "black" }}>|</span> TotalIn: {totalTtIn} <span style={{ color: "black" }}>|</span> TotalOut: {totalTtOut} <span style={{ color: "black" }}>|</span> Return: {percent}% </p>
+            <p> Global stats<span className="handAlign">&#9758;</span> &emsp; Total In: {totalTtIn} <span style={{ color: "black" }}>|</span> Total Out: {totalTtOut} <span style={{ color: "black" }}> | </span> Total PED: {totalTtOut - totalTtIn} <span style={{ color: "black" }}>|</span> Return: {percent}% </p>
         </>
     )
 }

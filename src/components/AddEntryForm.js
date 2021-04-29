@@ -47,7 +47,7 @@ const AddEntryForm = () => {
 
     return (
         <>
-            <form id="addEntryForm" onSubmit={handleSubmit} className="d-flex align-items-center justify-content-center flex-row my-2">
+            <form id="addEntryForm" onSubmit={handleSubmit} className="d-flex align-items-center justify-content-center flex-row mt-4">
                 <div className="form-group m-0 d-flex align-items-center justify-content-center flex-row">
                     <label className="ml-3 mr-1 my-0" style={{ color: "orange" }}>TT In: </label>
                     <input required style={{ backgroundColor: "#495057" }} type="number" placeholder="In..." value={ttIn} onChange={(e) => {

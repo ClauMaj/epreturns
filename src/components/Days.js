@@ -34,18 +34,18 @@ const Days = (props) => {
 
     let monthList = monthlySessions.map((entry) => {
         return (
-            <StyledC.DayLi key={entry.id}>
-                <div className="row mx-0">
+            <StyledC.DayLi key={entry.id} >
+                <div className="row mx-0 d-flex align-items-center">
                     <div className="col-2 "><b>{entry.dayOfWeek} {entry.dayName}/{entry.mth}/{entry.year}</b></div>
-                    <div className="col-2"> <b>TT in: <span style={{
+                    <div className="col-2 "> <b>TT in: <span style={{
                         color: "darkblue"
                     }}>{entry.ttIn}</span></b> </div>
-                    < div className="col-2" > <b>TT out: <span style={{
+                    < div className="col-2 " > <b>TT out: <span style={{
                         color: "darkblue"
                     }}>{entry.ttOut}</span> </b></div>
                     <div className="col-2" style={{
                         color: ((entry.ttOut * 100 / entry.ttIn || 0).toFixed(2) >= 100) ? "rgb(39, 88, 39)" : "darkred"
-                    }}>{(entry.ttOut * 100 / entry.ttIn || 0).toFixed(2)}% </div>
+                    }}> <b> {(entry.ttOut * 100 / entry.ttIn || 0).toFixed(2)}%</b> </div>
                     <div className="col-2 "></div>
 
                     <div className=" col-2 d-flex align-items-center justify-content-end">
@@ -70,7 +70,7 @@ const Days = (props) => {
     return (
         <div>
             <div className="row">
-                <p className="ml-4 my-3 monTotal">Monthly stats <span style={{ color: "black" }}>|</span> Total In: {totalTtIn} <span style={{ color: "black" }}>|</span> Total Out: {totalTtOut} <span style={{ color: "black" }}>|</span>  Return: {percent}% </p>
+                <p className="ml-4 my-3 monTotal">Monthly stats<span className="handAlign">&#9758;</span>&emsp; Total In: {totalTtIn} <span style={{ color: "black" }}>|</span> Total Out: {totalTtOut} <span style={{ color: "black" }}>|</span> Total PED: {totalTtOut - totalTtIn} <span style={{ color: "black" }}>|</span> Return: {percent}% </p>
             </div>
             <div className="row">
                 <ul className="w-100">

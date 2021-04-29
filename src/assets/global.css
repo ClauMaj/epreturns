@@ -55,3 +55,12 @@
   background-color: #d3d3d3;
   border: none;
 }
+
+.handAlign {
+  line-height: 20px;
+  vertical-align: top;
+}
+
+.borderRight {
+  border-right: 1px solid black;
+}
