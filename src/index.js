@@ -9,6 +9,8 @@ import { createStore } from 'redux' //Redux.createStore()
 import { Provider } from 'react-redux' // makes available the state by wraping all components
 import "bootstrap/dist/css/bootstrap.min.css"; // import bootstrap link
 import "./assets/global.css";  // import custom css
+import "react-toastify/dist/ReactToastify.min.css";
+import { ToastContainer } from "react-toastify";
 
 
 // font-awesome
@@ -64,6 +66,7 @@ ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <Router>
+        <ToastContainer position="top-right" autoClose={2000} newestOnTop />
         <BaseLayout>
           <Switch>
             <Route exact path="/" component={App} />

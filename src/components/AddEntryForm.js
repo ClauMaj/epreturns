@@ -5,6 +5,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import '../assets/global.css'
 import { addEp2Entry } from '../actions/actions'
+import { toast } from "react-toastify";
 
 const AddEntryForm = () => {
     const [ttIn, setTtIn] = useState('');
@@ -40,7 +41,7 @@ const AddEntryForm = () => {
         let year = splitDate[3];
 
         dispatch(addEp2Entry({ dayOfWeek, mth, dayName, year, ttIn, ttOut }))
-
+        toast.success(`Your entry was saved!`);
         setTtIn('');
         setTtOut('');
     }

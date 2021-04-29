@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import '../assets/global.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { deleteEntry } from '../actions/actions'
+import { toast } from "react-toastify";
 
 
 const Days = (props) => {
@@ -19,9 +20,8 @@ const Days = (props) => {
 
     let monthlySessions = allSessions.filter((entry) => {
         return parseInt(entry.mth) === selectedMonth
-    }).reverse();
+    }).sort((a, b) => { return a.dayName - b.dayName }).reverse();
 
-    console.log(monthlySessions)
 
     let totalTtIn = monthlySessions.reduce((acc, curr) => {
         return (parseInt(curr.mth) === selectedMonth) ? acc + parseInt(curr.ttIn) : acc
@@ -51,7 +51,8 @@ const Days = (props) => {
                     <div className=" col-2 d-flex align-items-center justify-content-end">
 
                         <Button className="deleteEdit" onClick={() => {
-                            dispatch(deleteEntry(entry.id))
+                            dispatch(deleteEntry(entry.id));
+                            toast.error(`Entry deleted!`);
                         }}>
                             <FontAwesomeIcon icon={["fas", "trash"]} color="black" />
                         </Button>
