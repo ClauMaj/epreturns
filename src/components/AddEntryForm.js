@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Button } from 'react-bootstrap' // import styled-component
+import { useDispatch, useSelector } from 'react-redux';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import '../assets/global.css'
@@ -9,6 +10,10 @@ const AddEntryForm = () => {
     const [ttIn, setTtIn] = useState(0);
     const [ttOut, setTtOut] = useState(0);
     const [startDate, setStartDate] = useState(new Date());
+
+
+    // receive dispatch functions
+    const dispatch = useDispatch()
 
     let months = {
         Jan: "0",
@@ -26,7 +31,6 @@ const AddEntryForm = () => {
     };
 
     console.log(startDate)
-    console.log(typeof (startDate))
 
     const handleSubmit = (e) => {
         e.preventDefault();
