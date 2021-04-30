@@ -1,17 +1,19 @@
 
 import React from 'react'
 import { Link } from "react-router-dom";
-import * as StyledC from "./styles/Styles"
+import * as StyledC from "../styles/Styles"
 import { Button } from 'react-bootstrap' // import styled-component
 import { useDispatch, useSelector } from 'react-redux';
-import '../assets/global.css';
+import '../../assets/global.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { deleteEntry } from '../actions/actions'
+import { deleteEntry, setYear } from '../../actions/actions'
 import { toast } from "react-toastify";
 
 
 const Days = (props) => {
-    const allSessions = useSelector(state => state.year2021.ep2)
+
+    const selectedYear = useSelector(state => state.selectedYear)
+    const allSessions = useSelector(state => state[selectedYear].ep2)
     const selectedMonth = useSelector(state => state.selectedMonth)
     // receive dispatch functions
     const dispatch = useDispatch()
@@ -43,10 +45,13 @@ const Days = (props) => {
                     < div className="col-2 " > <b>TT out: <span style={{
                         color: "darkblue"
                     }}>{entry.ttOut}</span> </b></div>
+                    <div className="col-2 "><b>Result: <span style={{
+                        color: ((entry.ttOut - entry.ttIn) >= 0) ? "rgb(39, 88, 39)" : "darkred"
+                    }}>{entry.ttOut - entry.ttIn}</span> </b></div>
                     <div className="col-2" style={{
                         color: ((entry.ttOut * 100 / entry.ttIn || 0).toFixed(2) >= 100) ? "rgb(39, 88, 39)" : "darkred"
                     }}> <b> {(entry.ttOut * 100 / entry.ttIn || 0).toFixed(2)}%</b> </div>
-                    <div className="col-2 "></div>
+
 
                     <div className=" col-2 d-flex align-items-center justify-content-end">
 

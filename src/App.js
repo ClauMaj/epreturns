@@ -1,12 +1,23 @@
 
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from "react-router-dom";
 import * as StyledC from "./components/styles/Styles"
 import { Button } from 'react-bootstrap' // import styled-component
+import { setMonth, setYear } from './actions/actions';
 
 const App = () => {
+  // receive dispatch functions
+  const dispatch = useDispatch()
 
 
+  useEffect(() => {
+    let d = new Date();
+    let currMonth = d.getMonth();
+    let currYear = d.getFullYear();
+    dispatch(setMonth(parseInt(currMonth)))
+    dispatch(setYear(parseInt(currYear)))
+  }, [])
 
   return (
     <StyledC.MainDiv >

@@ -1,9 +1,10 @@
 import React from 'react'
 import { useSelector } from 'react-redux';
-import '../assets/global.css';
+import '../../assets/global.css';
 
 const Stats = () => {
-    const allSessions = useSelector(state => state.year2021.ep2)
+    const selectedYear = useSelector(state => state.selectedYear)
+    const allSessions = useSelector(state => state[selectedYear].ep2)
 
     let totalTtIn = allSessions.reduce((acc, curr) => {
         return acc + parseInt(curr.ttIn)

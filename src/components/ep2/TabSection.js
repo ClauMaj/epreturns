@@ -1,20 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { Tabs, Tab } from 'react-bootstrap';
 import { Link } from "react-router-dom";
-import * as StyledC from "./styles/Styles";
+import * as StyledC from "../styles/Styles"
 import { Button } from 'react-bootstrap'; // import styled-component
 import { useDispatch, useSelector } from 'react-redux';
 import Days from './Days';
 import AddEntryForm from './AddEntryForm';
-import '../assets/global.css';
-import { setMonth } from '../actions/actions';
+import '../../assets/global.css';
+import { setMonth } from '../../actions/actions';
 
 const TabSection = () => {
     const [key, setKey] = useState(0);
     const selectedMonth = useSelector(state => state.selectedMonth)
 
-    let d = new Date();
-    let currMonth = d.getMonth();
 
     // receive dispatch functions
     const dispatch = useDispatch()
@@ -23,9 +21,7 @@ const TabSection = () => {
         "August", "September", "October", "November", "December"];
 
     useEffect(() => {
-        setKey(parseInt(currMonth))
-        dispatch(setMonth(parseInt(currMonth)))
-        console.log(currMonth)
+        setKey(parseInt(selectedMonth))
     }, [])
 
 

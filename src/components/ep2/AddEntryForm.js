@@ -3,8 +3,8 @@ import { Button } from 'react-bootstrap' // import styled-component
 import { useDispatch, useSelector } from 'react-redux';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import '../assets/global.css'
-import { addEp2Entry } from '../actions/actions'
+import '../../assets/global.css'
+import { addEp2Entry } from '../../actions/actions'
 import { toast } from "react-toastify";
 
 const AddEntryForm = () => {

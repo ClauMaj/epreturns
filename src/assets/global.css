@@ -64,3 +64,15 @@
 .borderRight {
   border-right: 1px solid black;
 }
+
+.yearButton {
+  background-color: #b14b14 !important;
+  color: black !important;
+  border: none !important;
+}
+
+.yearButton:focus {
+  background-color: black !important;
+  color: #b14b14 !important;
+  border: none !important;
+}

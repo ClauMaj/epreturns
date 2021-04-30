@@ -10,7 +10,13 @@ const reducer = (state, action) => {
                 ...state,
                 selectedMonth: action.data
             }
+        case "SETYEAR":
+            return {
+                ...state,
+                selectedYear: action.data
+            }
         case "ADDEPENTRY":
+            let selectedYear = action.data.year
             let newEntry = {
                 id: uuidv1(),
                 dayOfWeek: action.data.dayOfWeek,
@@ -22,19 +28,20 @@ const reducer = (state, action) => {
             }
             return {
                 ...state,
-                year2021: {
-                    ...state.year2021,
-                    ep2: [...state.year2021.ep2, newEntry]
+                [selectedYear]: {
+                    ...state[selectedYear],
+                    ep2: [...state[selectedYear].ep2, newEntry]
                 }
             }
         case "DELETEENTRY":
-            let deleteEntry = state.year2021.ep2.filter((entry) => {
+            let deleteFromYear = state.selectedYear;
+            let deleteEntry = state[deleteFromYear].ep2.filter((entry) => {
                 return entry.id !== action.data;
             });
             return {
                 ...state,
-                year2021: {
-                    ...state.year2021,
+                [deleteFromYear]: {
+                    ...state[deleteFromYear],
                     ep2: deleteEntry
                 }
             }

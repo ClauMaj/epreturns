@@ -7,6 +7,13 @@ export const setMonth = (n) => {
     }
 }
 
+export const setYear = (n) => {
+    return {
+        type: "SETYEAR",
+        data: n
+    }
+}
+
 export const addEp2Entry = (n) => {
     return {
         type: "ADDEPENTRY",
@@ -20,3 +27,4 @@ export const deleteEntry = (n) => {
         data: n
     }
 }
+

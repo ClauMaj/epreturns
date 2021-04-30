@@ -1,7 +1,7 @@
 import React from "react";    // import react
 import ReactDOM from "react-dom";  // import react-dom
 import App from "./App";  // component
-import Ep2 from "./components/Ep2";  // component
+import Ep2 from "./components/ep2/Ep2";  // component
 import BaseLayout from './components/layout/BaseLayout'; // import the BaseLayout component(covers all pages)
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom' // routers and switches for the render
 import reducer from "./reducers/reducer";  // import the reducer
@@ -36,10 +36,85 @@ const loadFromLocalStorage = () => {
   const serializeState = localStorage.getItem('epreturns');
   if (serializeState === null) {
     return {
-      year2021: {
+      2021: {
         ep2: [],
         hunt: [],
         mine: [],
+        ep2Mu: [],
+        huntMu: [],
+        mineMu: [],
+      },
+      2022: {
+        ep2: [],
+        hunt: [],
+        mine: [],
+        ep2Mu: [],
+        huntMu: [],
+        mineMu: [],
+      },
+      2023: {
+        ep2: [],
+        hunt: [],
+        mine: [],
+        ep2Mu: [],
+        huntMu: [],
+        mineMu: [],
+      },
+      2024: {
+        ep2: [],
+        hunt: [],
+        mine: [],
+        ep2Mu: [],
+        huntMu: [],
+        mineMu: [],
+      },
+      2025: {
+        ep2: [],
+        hunt: [],
+        mine: [],
+        ep2Mu: [],
+        huntMu: [],
+        mineMu: [],
+      },
+      2026: {
+        ep2: [],
+        hunt: [],
+        mine: [],
+        ep2Mu: [],
+        huntMu: [],
+        mineMu: [],
+      },
+      2027: {
+        ep2: [],
+        hunt: [],
+        mine: [],
+        ep2Mu: [],
+        huntMu: [],
+        mineMu: [],
+      },
+      2028: {
+        ep2: [],
+        hunt: [],
+        mine: [],
+        ep2Mu: [],
+        huntMu: [],
+        mineMu: [],
+      },
+      2029: {
+        ep2: [],
+        hunt: [],
+        mine: [],
+        ep2Mu: [],
+        huntMu: [],
+        mineMu: [],
+      },
+      2030: {
+        ep2: [],
+        hunt: [],
+        mine: [],
+        ep2Mu: [],
+        huntMu: [],
+        mineMu: [],
       }
     }
   }
