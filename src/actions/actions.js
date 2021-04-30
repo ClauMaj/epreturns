@@ -14,9 +14,9 @@ export const setYear = (n) => {
     }
 }
 
-export const addEp2Entry = (n) => {
+export const addCraftEntry = (n) => {
     return {
-        type: "ADDEPENTRY",
+        type: "ADDCRAFTENTRY",
         data: n
     }
 }

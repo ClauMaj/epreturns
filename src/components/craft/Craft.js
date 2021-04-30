@@ -4,11 +4,12 @@ import * as StyledC from "../styles/Styles"
 import { Button } from 'react-bootstrap' // import styled-component
 import TabSection from './TabSection'
 import Stats from './Stats'
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { setYear } from '../../actions/actions';
 import '../../assets/global.css';
 
-const Ep2 = () => {
+const Craft = () => {
+    const selectedYear = useSelector(state => state.selectedYear)
 
     // receive dispatch functions
     const dispatch = useDispatch()
@@ -17,7 +18,10 @@ const Ep2 = () => {
 
     let allYearsButtons = allYears.map((year) => {
         return (
-            <Button className="yearButton mx-1" size="sm">2021</Button>
+            <div className={(parseInt(year) === selectedYear) ? "yearButtonActive mx-1 px-1" : "yearButton mx-1 px-1"} onClick={() => {
+                dispatch(setYear(parseInt(year)))
+            }
+            }> <b>{year}</b> </div>
         )
     }
     )
@@ -28,7 +32,7 @@ const Ep2 = () => {
             <div className="row mx-0">
                 <div className="col-8 offset-2">
                     <StyledC.H1JobsDiv>
-                        <StyledC.HomeH1 h="5vh">Ep 2!</StyledC.HomeH1>
+                        <StyledC.HomeH1 h="5vh">Craft!</StyledC.HomeH1>
                     </StyledC.H1JobsDiv>
 
                 </div>
@@ -61,4 +65,4 @@ const Ep2 = () => {
     )
 }
 
-export default Ep2
+export default Craft

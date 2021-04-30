@@ -66,13 +66,17 @@
 }
 
 .yearButton {
+  cursor: pointer;
   background-color: #b14b14 !important;
   color: black !important;
-  border: none !important;
+  border: 1px solid #b14b14;
+  border-radius: 4px;
 }
 
-.yearButton:focus {
+.yearButtonActive {
+  cursor: pointer;
   background-color: black !important;
   color: #b14b14 !important;
-  border: none !important;
+  border: 1px solid #b14b14;
+  border-radius: 4px;
 }

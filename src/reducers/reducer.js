@@ -15,7 +15,7 @@ const reducer = (state, action) => {
                 ...state,
                 selectedYear: action.data
             }
-        case "ADDEPENTRY":
+        case "ADDCRAFTENTRY":
             let selectedYear = action.data.year
             let newEntry = {
                 id: uuidv1(),
@@ -25,24 +25,25 @@ const reducer = (state, action) => {
                 year: action.data.year,
                 ttIn: action.data.ttIn,
                 ttOut: action.data.ttOut,
+                bp: action.data.bp,
             }
             return {
                 ...state,
                 [selectedYear]: {
                     ...state[selectedYear],
-                    ep2: [...state[selectedYear].ep2, newEntry]
+                    craft: [...state[selectedYear].craft, newEntry]
                 }
             }
         case "DELETEENTRY":
             let deleteFromYear = state.selectedYear;
-            let deleteEntry = state[deleteFromYear].ep2.filter((entry) => {
+            let deleteEntry = state[deleteFromYear].craft.filter((entry) => {
                 return entry.id !== action.data;
             });
             return {
                 ...state,
                 [deleteFromYear]: {
                     ...state[deleteFromYear],
-                    ep2: deleteEntry
+                    craft: deleteEntry
                 }
             }
         default:

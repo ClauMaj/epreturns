@@ -48,12 +48,14 @@ const Days = (props) => {
                     <div className="col-2 "><b>Result: <span style={{
                         color: ((entry.ttOut - entry.ttIn) >= 0) ? "rgb(39, 88, 39)" : "darkred"
                     }}>{entry.ttOut - entry.ttIn}</span> </b></div>
-                    <div className="col-2" style={{
+                    <div className="col-1" style={{
                         color: ((entry.ttOut * 100 / entry.ttIn || 0).toFixed(2) >= 100) ? "rgb(39, 88, 39)" : "darkred"
                     }}> <b> {(entry.ttOut * 100 / entry.ttIn || 0).toFixed(2)}%</b> </div>
+                    < div className="col-2 " > <b> <span style={{
+                        color: "darkblue"
+                    }}>{entry.bp}</span> </b></div>
 
-
-                    <div className=" col-2 d-flex align-items-center justify-content-end">
+                    <div className=" col-1 d-flex align-items-center justify-content-end">
 
                         <Button className="deleteEdit" onClick={() => {
                             dispatch(deleteEntry(entry.id));

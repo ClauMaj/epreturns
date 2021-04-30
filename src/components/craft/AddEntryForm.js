@@ -4,12 +4,13 @@ import { useDispatch, useSelector } from 'react-redux';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import '../../assets/global.css'
-import { addEp2Entry } from '../../actions/actions'
+import { addCraftEntry } from '../../actions/actions'
 import { toast } from "react-toastify";
 
 const AddEntryForm = () => {
     const [ttIn, setTtIn] = useState('');
     const [ttOut, setTtOut] = useState('');
+    const [bp, setBp] = useState('');
     const [startDate, setStartDate] = useState(new Date());
 
     console.log(ttIn)
@@ -40,10 +41,11 @@ const AddEntryForm = () => {
         let dayName = splitDate[2];
         let year = splitDate[3];
 
-        dispatch(addEp2Entry({ dayOfWeek, mth, dayName, year, ttIn, ttOut }))
+        dispatch(addCraftEntry({ dayOfWeek, mth, dayName, year, ttIn, ttOut, bp }))
         toast.success(`Your entry was saved!`);
         setTtIn('');
         setTtOut('');
+        setBp('');
     }
 
     return (
@@ -57,6 +59,10 @@ const AddEntryForm = () => {
                     <label required className="ml-3 mr-1 my-0" style={{ color: "orange" }}>TT Out: </label>
                     <input style={{ backgroundColor: "#495057" }} type="number" placeholder="Out..." value={ttOut} onChange={(e) => {
                         setTtOut(e.target.value)
+                    }} />
+                    <label required className="ml-3 mr-1 my-0" style={{ color: "orange" }}>BP: </label>
+                    <input style={{ backgroundColor: "#495057" }} type="text" placeholder="BP..." value={bp} onChange={(e) => {
+                        setBp(e.target.value)
                     }} />
 
                     <DatePicker className="ml-2" id="appDate" selected={startDate} onChange={date => setStartDate(date)} />
