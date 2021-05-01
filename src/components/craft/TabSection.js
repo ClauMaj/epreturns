@@ -22,7 +22,7 @@ const TabSection = () => {
 
     useEffect(() => {
         setKey(parseInt(selectedMonth))
-    }, [])
+    }, [selectedMonth])
 
 
     let monthTabs = allMonths.map((m, index) => {

@@ -21,9 +21,9 @@ export const addCraftEntry = (n) => {
     }
 }
 
-export const deleteEntry = (n) => {
+export const deleteCraftEntry = (n) => {
     return {
-        type: "DELETEENTRY",
+        type: "DELETECRAFTENTRY",
         data: n
     }
 }

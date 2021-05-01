@@ -6,14 +6,14 @@ import { Button } from 'react-bootstrap' // import styled-component
 import { useDispatch, useSelector } from 'react-redux';
 import '../../assets/global.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { deleteEntry, setYear } from '../../actions/actions'
+import { deleteCraftEntry, setYear } from '../../actions/actions'
 import { toast } from "react-toastify";
 
 
 const Days = (props) => {
 
     const selectedYear = useSelector(state => state.selectedYear)
-    const allSessions = useSelector(state => state[selectedYear].ep2)
+    const allSessions = useSelector(state => state[selectedYear].craft)
     const selectedMonth = useSelector(state => state.selectedMonth)
     // receive dispatch functions
     const dispatch = useDispatch()
@@ -58,7 +58,7 @@ const Days = (props) => {
                     <div className=" col-1 d-flex align-items-center justify-content-end">
 
                         <Button className="deleteEdit" onClick={() => {
-                            dispatch(deleteEntry(entry.id));
+                            dispatch(deleteCraftEntry(entry.id));
                             toast.error(`Entry deleted!`);
                         }}>
                             <FontAwesomeIcon icon={["fas", "trash"]} color="black" />

@@ -56,12 +56,12 @@ const AddEntryForm = () => {
                     <input required style={{ backgroundColor: "#495057" }} type="number" placeholder="In..." value={ttIn} onChange={(e) => {
                         setTtIn(e.target.value)
                     }} />
-                    <label required className="ml-3 mr-1 my-0" style={{ color: "orange" }}>TT Out: </label>
-                    <input style={{ backgroundColor: "#495057" }} type="number" placeholder="Out..." value={ttOut} onChange={(e) => {
+                    <label className="ml-3 mr-1 my-0" style={{ color: "orange" }}>TT Out: </label>
+                    <input required style={{ backgroundColor: "#495057" }} type="number" placeholder="Out..." value={ttOut} onChange={(e) => {
                         setTtOut(e.target.value)
                     }} />
-                    <label required className="ml-3 mr-1 my-0" style={{ color: "orange" }}>BP: </label>
-                    <input style={{ backgroundColor: "#495057" }} type="text" placeholder="BP..." value={bp} onChange={(e) => {
+                    <label className="ml-3 mr-1 my-0" style={{ color: "orange" }}>BP: </label>
+                    <input required style={{ backgroundColor: "#495057" }} type="text" placeholder="BP..." value={bp} onChange={(e) => {
                         setBp(e.target.value)
                     }} />
 

@@ -4,7 +4,7 @@ import '../../assets/global.css';
 
 const Stats = () => {
     const selectedYear = useSelector(state => state.selectedYear)
-    const allSessions = useSelector(state => state[selectedYear].ep2)
+    const allSessions = useSelector(state => state[selectedYear].craft)
 
     let totalTtIn = allSessions.reduce((acc, curr) => {
         return acc + parseInt(curr.ttIn)

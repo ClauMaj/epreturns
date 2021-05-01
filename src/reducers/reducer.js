@@ -34,7 +34,7 @@ const reducer = (state, action) => {
                     craft: [...state[selectedYear].craft, newEntry]
                 }
             }
-        case "DELETEENTRY":
+        case "DELETECRAFTENTRY":
             let deleteFromYear = state.selectedYear;
             let deleteEntry = state[deleteFromYear].craft.filter((entry) => {
                 return entry.id !== action.data;
