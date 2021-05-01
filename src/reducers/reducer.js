@@ -46,6 +46,19 @@ const reducer = (state, action) => {
                     craft: deleteEntry
                 }
             }
+
+        // case "ADDMU":
+        //     let deleteFromYear = state.selectedYear;
+        //     let deleteEntry = state[deleteFromYear].craft.filter((entry) => {
+        //         return entry.id !== action.data;
+        //     });
+        //     return {
+        //         ...state,
+        //         [deleteFromYear]: {
+        //             ...state[deleteFromYear],
+        //             craft: deleteEntry
+        //         }
+        //     }
         default:
             return state;
     }

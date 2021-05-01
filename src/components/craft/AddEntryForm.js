@@ -48,6 +48,9 @@ const AddEntryForm = () => {
         setBp('');
     }
 
+
+
+
     return (
         <>
             <form id="addEntryForm" onSubmit={handleSubmit} className="d-flex align-items-center justify-content-center flex-row mt-4">
@@ -65,7 +68,7 @@ const AddEntryForm = () => {
                         setBp(e.target.value)
                     }} />
 
-                    <DatePicker className="ml-2" id="appDate" selected={startDate} onChange={date => setStartDate(date)} />
+                    <DatePicker className="ml-2 appDate" selected={startDate} onChange={date => setStartDate(date)} />
                 </div>
                 {/* end input field */}
 
@@ -73,6 +76,8 @@ const AddEntryForm = () => {
 
                 <Button type='submit' className='buttonApp mx-2' variant="success" size="sm">Add Entry</Button>
             </form>
+
+
         </>
     )
 }

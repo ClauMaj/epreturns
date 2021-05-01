@@ -28,3 +28,10 @@ export const deleteCraftEntry = (n) => {
     }
 }
 
+export const addMu = (n) => {
+    return {
+        type: "ADDMU",
+        data: n
+    }
+}
+
