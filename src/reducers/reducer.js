@@ -47,18 +47,31 @@ const reducer = (state, action) => {
                 }
             }
 
-        // case "ADDMU":
-        //     let deleteFromYear = state.selectedYear;
-        //     let deleteEntry = state[deleteFromYear].craft.filter((entry) => {
-        //         return entry.id !== action.data;
-        //     });
-        //     return {
-        //         ...state,
-        //         [deleteFromYear]: {
-        //             ...state[deleteFromYear],
-        //             craft: deleteEntry
-        //         }
-        //     }
+        case "ADDMU":
+            let addMuToYear = action.data.year;
+            let selectActiv = '';
+            if (action.data.activity === 'hunt') {
+                selectActiv = 'huntMu';
+            }
+            else if (action.data.activity === 'mining') {
+                selectActiv = 'mineMu';
+            }
+            else {
+                selectActiv = 'craftMu';
+            }
+            let newMuEntry = {
+                id: uuidv1(),
+                mth: action.data.mth,
+                year: action.data.year,
+                mu: action.data.mu,
+            }
+            return {
+                ...state,
+                [addMuToYear]: {
+                    ...state[addMuToYear],
+                    [selectActiv]: [...state[addMuToYear][selectActiv], newMuEntry]
+                }
+            }
         default:
             return state;
     }

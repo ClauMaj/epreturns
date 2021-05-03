@@ -50,7 +50,6 @@ const Stats = () => {
         dispatch(addMu({ mth, year, mu, activity }))
         toast.success(`Your entry was saved!`);
         setMu('');
-        setActivity('craft');
     }
 
     return (
@@ -60,16 +59,16 @@ const Stats = () => {
             <form id="addMu" onSubmit={handleMuSubmit} className="d-flex align-items-center justify-content-center flex-row mb-4  mt-4">
                 <div className="form-group m-0 d-flex align-items-center justify-content-center flex-row">
                     <label className="ml-3 mr-1 my-0" style={{ color: "orange" }}>Add Markup: </label>
-                    <input required style={{ backgroundColor: "#495057" }} type="text" placeholder="Markup..." value={mu} onChange={(e) => {
+                    <input required style={{ backgroundColor: "#495057" }} type="number" placeholder="Markup..." value={mu} onChange={(e) => {
                         setMu(e.target.value)
                     }} />
 
                     <div className="mx-3 form-group-select my-0">
                         <label className=" my-0 mr-2" style={{ color: "orange" }}>Activity:</label>
                         <select className="form-select form-select-lg appDate" onChange={(e) => { setActivity(e.target.value) }}>
-                            <option key="craft" value="Craft">Craft</option>
-                            <option key="hunt" value="Hunt">Hunt</option>
-                            <option key="mining" value="Mining">Mining</option>
+                            <option key="craft" value="craft">Craft</option>
+                            <option key="hunt" value="hunt">Hunt</option>
+                            <option key="mining" value="mining">Mining</option>
                         </select>
                     </div>
 
