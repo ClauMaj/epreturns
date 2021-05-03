@@ -15,6 +15,7 @@ const Days = (props) => {
     const selectedYear = useSelector(state => state.selectedYear)
     const allSessions = useSelector(state => state[selectedYear].craft)
     const selectedMonth = useSelector(state => state.selectedMonth)
+    const allCraftMu = useSelector(state => state[selectedYear].craftMu)
     // receive dispatch functions
     const dispatch = useDispatch()
 
@@ -32,7 +33,14 @@ const Days = (props) => {
     let totalTtOut = monthlySessions.reduce((acc, curr) => {
         return (parseInt(curr.mth) === selectedMonth) ? acc + parseInt(curr.ttOut) : acc
     }, 0)
-    let percent = (totalTtOut * 100 / totalTtIn || 0).toFixed(2)
+
+    let allMonthlyMU = allCraftMu.reduce((acc, curr) => {
+        return (parseInt(curr.mth) === selectedMonth) ? acc + parseInt(curr.mu) : acc
+    }, 0)
+
+    let percent = (totalTtOut * 100 / totalTtIn || 0).toFixed(2);
+    let percentWithMu = ((totalTtOut + allMonthlyMU) * 100 / totalTtIn || 0).toFixed(2);
+
 
     let monthList = monthlySessions.map((entry) => {
         return (
@@ -79,6 +87,21 @@ const Days = (props) => {
         <div>
             <div className="row">
                 <p className="ml-4 my-3 monTotal">Monthly stats<span className="handAlign">&#9758;</span>&emsp; Total In: {totalTtIn} <span style={{ color: "black" }}>|</span> Total Out: {totalTtOut} <span style={{ color: "black" }}>|</span> Total PED: {totalTtOut - totalTtIn} <span style={{ color: "black" }}>|</span> Return: {percent}% </p>
+
+
+            </div>
+            <div className="row">
+                <p className="ml-4 mb-3 monTotal"> Monthly stats after MU
+                <span className="handAlign">&#9758;</span>
+                &emsp; Total In: {totalTtIn}
+                    <span style={{ color: "black" }}> | </span>
+                Total Out: {totalTtOut}
+                    <span style={{ color: "black" }}> | </span>
+                Total Mu: {allMonthlyMU}
+                    <span style={{ color: "black" }}> | </span>
+                Total PED after MU: {totalTtOut - totalTtIn + allMonthlyMU}
+                    <span style={{ color: "black" }}> | </span>
+                Return: {percentWithMu}% </p>
             </div>
             <div className="row">
                 <ul className="w-100">
@@ -88,7 +111,7 @@ const Days = (props) => {
             <div style={{ height: "100px" }}>
 
             </div>
-        </div>
+        </div >
     )
 }
 
