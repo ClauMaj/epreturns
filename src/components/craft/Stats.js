@@ -57,6 +57,7 @@ const Stats = () => {
         <>
             <p> Global stats<span className="handAlign">&#9758;</span> &emsp; Total In: {totalTtIn} <span style={{ color: "black" }}>|</span> Total Out: {totalTtOut} <span style={{ color: "black" }}> | </span> Total PED: {totalTtOut - totalTtIn} <span style={{ color: "black" }}>|</span> Return: {percent}% </p>
             <MuStats />
+
             <form id="addMu" onSubmit={handleMuSubmit} className="d-flex align-items-center justify-content-center flex-row mb-4  mt-4">
                 <div className="form-group m-0 d-flex align-items-center justify-content-center flex-row">
                     <label className="ml-3 mr-1 my-0" style={{ color: "orange" }}>Add Markup: </label>
@@ -84,6 +85,7 @@ const Stats = () => {
 
                 <Button type='submit' className='buttonApp mx-2' variant="success" size="sm">Add Mu</Button>
             </form>
+
         </>
     )
 }

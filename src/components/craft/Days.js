@@ -86,6 +86,7 @@ const Days = (props) => {
     return (
         <div>
             <div className="row">
+
                 <p className="ml-4 my-3 monTotal">Monthly stats<span className="handAlign">&#9758;</span>&emsp; Total In: {totalTtIn} <span style={{ color: "black" }}>|</span> Total Out: {totalTtOut} <span style={{ color: "black" }}>|</span> Total PED: {totalTtOut - totalTtIn} <span style={{ color: "black" }}>|</span> Return: {percent}% </p>
 
 

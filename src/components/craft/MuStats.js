@@ -42,8 +42,6 @@ const Stats = () => {
                 Total PED after MU: {totalTtOut - totalTtIn + allMU}
                 <span style={{ color: "black" }}> | </span>
                 Return: {percent}% </p>
-
-
         </>
     )
 }
